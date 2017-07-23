@@ -1,0 +1,280 @@
+Study Drills 
+For these next few exercises, you will have the exact same study drills
+1. Go back through and write a comment on what each line does.
+2. Read each one backward or out loud to find you errors.
+3. From now on, when you make mistakes, write down a piece of paper what kind of mistake you made.
+4. When you go to the next exercise, look at the mistakes you have made and try to not to make them in this new one.
+5. Remember that everyone makes mistakes. Programmers are like magicians who fool everyone into thinking they are perfect and never wrong, but it's all an act. Then make mistakes all the time. 
+
+# Command line and Crash Course   
+- show path(pwd) 
+- make a directory(mkdir)
+- change directory(cd)
+- list directory(ls) 
+- remove directory(rmdir)
+- moving around(pushd.popd)
+- making empty file(new-item)
+- copy a file(cp)
+- moving a file(mv)
+- view a file(less,more)
+- stream a file(cat)
+- removing a file(rm)
+- exiting your terminal(exit)
+
+# exercise 3:math
+**emphasis1**:运算优先级  
+PEMDAS,括号(parentheses)-指数(exponents)-乘(multiplication)-除(division)-加(addition)-减(subtraction)  
+
+**emphasis2**:找错误倒着读代码  
+
+# exercise 6:Strings and Text  
+**emphasis1:**  
+字符串有两种调用方式，1是直接调用，2是通过f-string形式调用  
+```
+types_of_people = 10
+x = f"There are {types_of_people} types of people."
+
+binary = "binary"
+do_not = "don't"
+y = f"Those who know {binary} and those who {do_not}."
+
+print(x)
+print(y)
+
+print(f"I said: {x}")
+print(f"I also said: '{y}'")
+```    
+
+老版格式化字符串方法：
+```
+my_name = 'Zed A.Shaw'
+my_age = 35 
+print "Let's talk about %s." %my_name 
+print "He's %d inches tall." %my_height  
+```
+
+**emphasis2:**  
+string+string 字符串连起来  
+
+**emphasis3：**  
+string*int int倍的自连串连起来  
+
+**emphasis4**：浮点数四舍五入的方法   
+使用round()函数，如round(1.7333)  
+
+
+# exercise 7:more printing  
+**mistake1:** 变量中间不能有空格   
+错误代码：`end 10 = "g"`   
+正确代码：`end10 = "g"`  
+
+# exercise 10 What Was that 
+**emphasis1:**   
+python支持的符号  
+![](https://ooo.0o0.ooo/2017/06/28/5952d9fd7fb37.png)  
+
+
+**emphasis2:**   
+''' 和 """的作用相同，定义字符串列表使用。关注有没有其他用法？  
+``` 
+fat_cat = """
+I'll do a list:
+\t* Cat food
+\t* Fishies
+\t* Catnip\n\t* Grass
+"""
+```
+
+**question1:**  
+不理解表格里这些符号的用法和意思  
+
+# exercise 12 Prompting People  
+**emphasis1**:input()函数可以加提示语    
+```
+print("How old are you?", end=' ')
+age = input("->")
+```
+
+# exercise 13  
+**emphasis1:**  
+输入字符串有两种方式，一是input(),二是argv(引用module)  
+区别是input()从keyboard输入，argv从command line输入  
+注：script指需要命令行输入当前程序  
+
+```
+from sys import argv
+# read the WYSS section for how to run this
+script, first, second, third = argv
+
+print("The script is called:", script)
+print("Your first variable is:", first)
+print("Your second variable is:", second)
+print("Your third variable is:", third)
+```   
+
+# exercise 14  
+**emphasis1:**   
+""",'''的作用是分行  
+```
+print(f"""
+Alright, so you said {likes} about liking me.
+You live in {lives}. Not sure where that is.
+And you have a {computer} computer. Nice.
+"""
+)
+```  
+
+# exercise 16   
+**emphasis1:**  
+- close --Closes the file. like File->Save.. in you editor  
+- read -- Reads the contents of the file. You can assign the result to a variable
+- readline -- Reads just one line of a text file 
+- truncate -- Empaties the file. Watch out if you care about the file
+- Write('stuff') -- Writes "stuff" to the file.   
+- seek(0) -- Move the read/write location to the beginning of the file     
+
+
+
+# exercise 18：Names, Variables, Code, Functions   
+**emphasis1:** function checklist  
+1. Did you start your function definition with def ?
+2. Does your function name have only characters and _ (underscore) characters ? 
+3. Did you put an open parenthesis ( right after the function name? 
+4. Did you put your arguments after the parenthesis ( separated by commas? 
+5. Did you make each argument unique(meaning no duplicated names)? 
+6. Did you put a close parenthesis and a colon ): after the argument?
+7. Did you indent all lines of code you want in the function four spaces? No more, no less 
+8. Did you "end" your function by going back to writing with no indent(dedenting we call it)?   
+
+**emphasis2:** call function checklist   
+1. Did you call/use/run this functino by typing its name ?
+2. Did you put the ( character after the name to run it ?
+3. Did you put the values you want into the parenthesis separated by commas ? 
+4. Did you end the function call with a ) character ?   
+
+eg.  
+```
+def print_two_again(arg1, arg2):
+    print(f"arg1: {arg1}, arg2: {arg2}")
+print_two_again("Zed", "Shaw") 
+``` 
+
+# exercise：19 Functions and Variables   
+**emphasis 1**:函数中parameter与argument的区别  
+parameter指函数申明的参数，argument指调动函数时传入的参数    
+
+**emphasis 2**:调用函数传入实参时，即可以直接传数字、变量，还能做math  
+
+
+# exercise 23:Strings,Bytes,and Character Encodings   
+**emphasis1**: DBES----Decode bytes encod strings   
+
+**emphasis2**:command line导入参数的两种方法  
+1. 
+```
+from sys import argv
+
+script, input_file = argv 
+```
+
+2.
+```
+import sys
+script, input_encoding, error = sys.argv
+```
+
+# exercise 24  
+**emphasis**:函数返回值可以赋给变量；函数中定义的变量，在函数外无效  
+```
+def secret_formula(started):
+    jelly_beans = started * 500
+    jars = jelly_beans / 1000
+    crates = jars / 100
+    return jelly_beans, jars, crates
+
+start_point = 10000
+beans, jars, crates = secret_formula(start_point)
+```
+
+# exercise 26   
+**mistakes1**  
+错误代码：  
+```
+start_point = 10000
+beans, jars, crates = secret_formula(start_point)
+
+# remember that this is another way to format a string
+print("With a starting point of: {}".format(start_point))
+# it's just like with an f"" string
+print(f"We'd have {beans} beans, {jars} jars, and {crates} crates.")
+
+start_point = start_point / 10
+
+print("We can also do that this way:")
+formula = secret_formula(start_point)
+# this is an easy way to apply a list to a format string
+print("We'd have {} beans, {} jars, and {} crates.".format(formula)) 
+``` 
+正确修改：  
+`print("We'd have {} beans, {} jars, and {} crates.".format(*formula))`  
+总结：format()中不止一个参数是前面要加* 
+
+# exercise29：else and if   
+**emphasis**:if-statement创建了一个block，顿号下面行的缩进代表blcok的代码，跟function类似   
+
+
+# exercise31：else and if  
+**emphasis1**:if-elif-else语句使用,如果想要更多option，添加更多elif    
+```
+if bear == "1":
+        print("The bear eats your face off. Good job!")
+    elif bear == "2":
+        print("The bear eats your legs off. Good job!")
+    else:
+        print(f"Well, doing {bear} is probably better.")
+        print("Bear runs away.")
+```  
+
+**emphasis2**:数值范围两种表示方法：0<x<10;  x in range (1,10).  
+
+# exercise 32 loops and list   
+**emphasis1**:range()函数的用法；for-loop循环的用法    
+```
+# then use the range function to do 0 to 5 counts
+for i in range(0, 6):
+    print(f"Adding {i} to the list.")
+    # append is a function that lists understand
+    elements.append(i)
+```   
+
+**emphasis2**: The range() function onlyd dose numbers from the first to the last, not including the last.   
+eg.`for i in range range(1, 3 ):` only loop two times instread of three times  
+
+# exercise 33 While loops  
+**emphasis1**: while和for loop只要满足条件执行整个循环，if statement满足条件只执行一次   
+**emphasis2**:if statement,while,for,funtion后要加colon,indent4个字符。执行block里面的代码  
+
+
+# exercise 36: Designing and Debugging   
+**emphasis1**:Rules for if-statements   
+1. Every *if-statement* must have an *else* 
+2. if this *else* should never run because it doesn't make sense, then you must use a die function in the else that prints out an error message and dies, just like we did in exercise35. This will find many errors.
+3. Never nest *if-statements* more than two deep and always try to do them one deep.
+4. Treat *if-statements* like paragraphs, where each if-elif-else grouping is like a set of sentences. Put blank lines before and after.  
+5. Your Boolean tests should be simple. If they are complex, move their calculations to variables earlier in your function and use a good name for the variable.   
+
+**emphasis2**:Rules for loops   
+1. Use a *while-loop* only to loop forever, and that means probably never. This only applies to Python; other languages are different.  
+2. Use a *for-loop* for all other kinds of looping, especially if there is a fixed or limited number of things to loop over.   
+
+**emphasis3**: Tips for Debugging   
+1. The best way to debug a program is to use *print* to print out the values of variables at points in the program to see where they go wrong.  
+2. Make sure parts of your programs work as you work on them. Do not write massive files of code before you try to run them. Code a little, run a little, fix a little   
+
+
+# exercise 38: Doing things to list  
+**emphasis1**: When to use lists  
+You use a list whenever you have something that matches the list data structure's useful features:  
+1. If you need to maintain order. Remember, this is listed order, not sorted order. Lists do not sort for you   
+2. If you need to acess the contents randomly by a number. Remember, this is using cardinal numbers starting at 0 
+3. If you need to go through the contents linearly(first to last). Remember, that's what *for-loop* are for 
